@@ -2,6 +2,7 @@ package panel
 
 import (
 	"encoding/json"
+	"github.com/XrayR-project/XrayR/api/v2board"
 	"os"
 	"sync"
 
@@ -176,8 +177,10 @@ func (p *Panel) Start() {
 		switch nodeConfig.PanelType {
 		case "SSpanel":
 			apiClient = sspanel.New(nodeConfig.ApiConfig)
-		case "NewV2board", "V2board":
+		case "NewV2board":
 			apiClient = newV2board.New(nodeConfig.ApiConfig)
+		case "V2board":
+			apiClient = v2board.New(nodeConfig.ApiConfig)
 		case "PMpanel":
 			apiClient = pmpanel.New(nodeConfig.ApiConfig)
 		case "Proxypanel":
