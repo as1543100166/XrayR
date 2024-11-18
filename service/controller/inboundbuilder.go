@@ -184,13 +184,13 @@ func InboundBuilder(config *Config, nodeInfo *api.NodeInfo, tag string) (*core.I
 			Authority:   nodeInfo.Authority,
 		}
 		streamSetting.GRPCConfig = grpcSettings
-	case "quic":
-		quicSettings := &conf.QUICConfig{
-			Header:   nodeInfo.Header,
-			Security: nodeInfo.Security,
-			Key:      nodeInfo.Key,
-		}
-		streamSetting.QUICSettings = quicSettings
+	//case "quic":
+	//	quicSettings := &conf.QUICConfig{
+	//		Header:   nodeInfo.Header,
+	//		Security: nodeInfo.Security,
+	//		Key:      nodeInfo.Key,
+	//	}
+	//	streamSetting.QUICSettings = quicSettings
 	case "httpupgrade":
 		httpupgradeSettings := &conf.HttpUpgradeConfig{
 			Headers:             nodeInfo.Headers,
